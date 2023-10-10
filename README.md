@@ -27,7 +27,14 @@ cd user_registration_backend
 npm install
 ```
 
-4. Create a `.env` file in the project's root directory and define the necessary environment variables.
+4. Create a `.env` file in the project's root directory and define the necessary environment variables:
+
+```bash
+PORT=8080
+DB_USER=yourDbUser
+DB_PASSWORD=yourDbPassword
+SECRET=somehashforsecretinhere
+```
 
 5. Start the server:
 
