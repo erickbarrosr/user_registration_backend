@@ -2,6 +2,9 @@ import express from "express";
 import cors from "cors";
 import database from "./database";
 
+import userRoutes from "./src/routes/userRoutes";
+import loginRoutes from "./src/routes/loginRoutes";
+
 class App {
   constructor() {
     this.app = express();
@@ -16,22 +19,10 @@ class App {
     this.app.use(cors());
   }
 
-  routes() {}
+  routes() {
+    this.app.use("/api", userRoutes);
+    this.app.use("/api", loginRoutes);
+  }
 }
 
 export default new App().app;
-
-// const express = require("express");
-// const app = express();
-// const cors = require("cors");
-// const router = require("./src/routes/router");
-// const database = require("./database");
-
-// database();
-
-// app.use(express.urlencoded({ extended: false }));
-// app.use(express.json());
-// app.use(cors());
-// app.use("/api", router);
-
-// module.exports = app;
